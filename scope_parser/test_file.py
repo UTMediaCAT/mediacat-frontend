@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+
 # In[62]:
 
 
@@ -20,10 +21,6 @@ def is_csv(filename):
         return True
     except:
         print("Input file is not csv or doesn't exist such csv")
-        
-
-
-# In[65]:
 
 
 is_csv("test_demo.csv")
@@ -48,21 +45,18 @@ is_csv("not_exist.csv")
 df = pd.read_csv("test_error_demo.csv")
 
 # find every rows that all Associated Twitter Handle is incorrect
-df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))]  
+df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))]  # nopep8
 
 
 # In[81]:
 
 
-# find every rows that all Associated Twitter Handle is incorrect and print the row number
+# find every rows that all Associated Twitter Handle is incorrect
+# and print the row number
 def check_ATH():
-    print(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))].index)
+    print(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))].index)  # nopep8
 
 check_ATH()
-    
-
-
-# In[79]:
 
 
 # find every rows that Type is not "News Source" or "Twitter Handle"
@@ -72,19 +66,16 @@ df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))]
 # In[83]:
 
 
-# find every rows that Type is not "News Source" or "Twitter Handle" and print its row number
+# find every rows that Type is not "News Source" or "Twitter Handle"
+# and print its row number
 def check_Type():
-    print(df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))].index)
+    print(df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))].index)  # nopep8
 
 check_Type()
-    
-
-
-# In[68]:
 
 
 # find the source is incorrect format
-df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://|https://"))))]
+df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://|https://"))))]  # nopep8
 
 
 # In[85]:
@@ -92,7 +83,7 @@ df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://
 
 # find the source is incorrect format and return index
 def check_Source():
-    print(df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://|https://"))))].index)
+    print(df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://|https://"))))].index)  # nopep8
 
 check_Source()
 
