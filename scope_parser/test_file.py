@@ -6,8 +6,6 @@
 
 
 import pandas as pd
-import re
-import csv
 
 
 # In[63]:
@@ -17,9 +15,9 @@ import csv
 def is_csv(filename):
     try:
         # try to read csv file
-        df = pd.read_csv(filename)
+        pd.read_csv(filename)
         return True
-    except:
+    except(Exception):
         print("Input file is not csv or doesn't exist such csv")
 
 
@@ -56,8 +54,6 @@ df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handl
 def check_ATH():
     print(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))].index)  # nopep8
 
-check_ATH()
-
 
 # find every rows that Type is not "News Source" or "Twitter Handle"
 df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))]
@@ -71,8 +67,6 @@ df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))]
 def check_Type():
     print(df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))].index)  # nopep8
 
-check_Type()
-
 
 # find the source is incorrect format
 df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://|https://"))))]  # nopep8
@@ -85,11 +79,5 @@ df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://
 def check_Source():
     print(df.loc[~((df["Source"].str.startswith('@') | (df["Source"].str.contains("http://|https://"))))].index)  # nopep8
 
-check_Source()
-
-
-# In[3]:
-
 
 type(u'תל אביב, ישראל')
-

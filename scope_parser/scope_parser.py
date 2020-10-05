@@ -84,27 +84,27 @@ df = df.sort_values(by=['UniqueID'])
 df
 
 
-l = [x for _, x in df.groupby('Type')]
-l[0]
+Object = [x for _, x in df.groupby('Type')]
+Object0]
 
 
 # In[13]:
 
 
-l[1]
+Object[1]
 
 
 # In[17]:
 
 
 print('l1')
-print(l[1].iloc[0, ])
+print(Object[1].iloc[0, ])
 print('l2')
-print(l[1].iloc[1, ])
+print(Object[1].iloc[1, ])
 print('l3')
-print(l[1].iloc[2, ])
+print(Object[1].iloc[2, ])
 print('l4')
-print(l[1].iloc[3, ])
+print(Object[1].iloc[3, ])
 
 
 def get_twitter_csv(file1):
@@ -115,6 +115,5 @@ def get_domain_csv(file0):
     file0.to_csv('domain.csv', index=False)
 
 
-get_twitter_csv(l[1])
-get_twitter_csv(l[0])
-
+get_twitter_csv(Object[1])
+get_twitter_csv(Object[0])
