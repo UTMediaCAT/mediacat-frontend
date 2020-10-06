@@ -62,6 +62,8 @@ new_df_to_add_twitter
 # add the new rows into the origin dataframe and sorted by UniqueID
 df = df.append(new_df_to_add_twitter)
 df = df.sort_values(by=['UniqueID'])
+df = df.reset_index()
+df.drop(['index'], axis=1, inplace=True)
 df
 
 
