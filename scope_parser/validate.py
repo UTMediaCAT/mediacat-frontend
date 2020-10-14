@@ -40,22 +40,6 @@ def check_unicode(filename):
         print('Chardet:', detection)
 
 
-# In[4]:
-
-
-def check_ATH(df):
-    """
-    find every rows that all Associated Twitter Handle
-    is incorrect and print the row number
-    :param df: a dataframe
-    :rtype: data frame
-    """
-    return(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))])  # nopep8
-
-
-# In[5]:
-
-
 def url_is_alive(url):
     """
     Checks that a given URL is reachable.
@@ -95,17 +79,6 @@ def check_ATH(df):  # silence pyflakes
     :rtype: a dataframe
     """
     return(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))])   # nopep8
-
-
-def check_Type(df):
-    """
-    find every rows that Type is not "News Source" or "Twitter Handle"
-    and return invalid rows as a new dataframe.
-    :param df: A dataframe
-    :rtype: a dataframe
-    """
-    new = df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))]  # nopep8
-    return(new)
 
 
 # find the source is incorrect format and return index
