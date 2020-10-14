@@ -87,7 +87,7 @@ def check_domain(df):
     return domain
 
 
-def check_ATH(df):
+def check_ATH(df):  # silence pyflakes
     """
     Checks that all Associated Twitter Handle is valid or not
     and return invalid dataframe.
