@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
 
 import pandas as pd
 import numpy as np
@@ -56,7 +58,7 @@ def url_is_alive(url):
         return False
 
 
-def check_domain(df):
+def check_domain(df):  # silence pyflakes
     """
     Checks that a given df's url is reachable and return invalid dataframe.
     :param df: A dataframe
@@ -71,7 +73,7 @@ def check_domain(df):
     return domain
 
 
-def check_ATH(df):  # silence pyflakes
+def check_ATH(df):
     """
     Checks that all Associated Twitter Handle is valid or not
     and return invalid dataframe.
@@ -81,8 +83,19 @@ def check_ATH(df):  # silence pyflakes
     return(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))])   # nopep8
 
 
+def check_Type(df):  # silence pyflakes
+    """
+    find every rows that Type is not "News Source" or "Twitter Handle"
+    and return invalid rows as a new dataframe.
+    :param df: A dataframe
+    :rtype: a dataframe
+    """
+    new = df.loc[~((df["Type"] == "Twitter Handle") | (df["Type"] == "News Source"))]  # nopep8
+    return(new)
+
+
 # find the source is incorrect format and return index
-def check_Source(df):
+def check_Source(df):  # silence pyflakes
     """
     Checks that all source(Twitter Handle part) is valid or not
     and return invalid rows as a new dataframe.
@@ -178,6 +191,5 @@ def validation(file):
 
 
 if __name__ == '__main__':
-
     inFile = sys.argv[1]
     validation(inFile)
