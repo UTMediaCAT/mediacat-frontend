@@ -13,8 +13,8 @@ import chardet
 import scope_parser as sp
 
 from colorama import Fore
-from colorama import Back
 from colorama import Style
+
 
 # check the input file should be csv file
 def is_csv(filename):
@@ -30,9 +30,12 @@ def is_csv(filename):
         df.to_csv(filename, index=False, encoding='utf-8-sig')
         return True
     except(Exception):
-         print ("filename; " + filename)
-         print(Fore.RED + 'Input file is invalid. It is not a csv file or it is corrupted.' + Style.RESET_ALL)
-         raise
+        print("filename; " + filename)
+        print(Fore.RED +
+              'Input file is invalid.' +
+              ' It is not a csv file or it is corrupted.' +
+              Style.RESET_ALL)
+        raise
 
 
 def check_unicode(filename):
@@ -186,13 +189,16 @@ def validation(file):
 
     # if it has error, generate error.csv
     if error_key == 1:
-        # print(Fore.RED + "There exists some csv formating errors, please fix" + Style.RESET_ALL)
         print(Fore.RED + "Generating error.csv..." + Style.RESET_ALL)
         Error.to_csv('error.csv', index=True, encoding='utf-8-sig')
-        raise Exception(Fore.RED + "There exists some csv formating errors, please refer to the error file to fix" + Style.RESET_ALL)
+        raise Exception(Fore.RED +
+              "There exists some csv formating errors," +
+                        "please refer to the error file to fix" +
+                        Style.RESET_ALL)
     else:
         sp.scope_parser(file)
-        print(Fore.GREEN + "Finished Validating and Scope Parsing." + Style.RESET_ALL)
+        print(Fore.GREEN +
+              "Finished Validating and Scope Parsing." + Style.RESET_ALL)
 
 
 if __name__ == '__main__':

@@ -2,7 +2,6 @@
 import sys
 
 from colorama import Fore
-from colorama import Back
 from colorama import Style
 
 # call validator
@@ -13,5 +12,5 @@ if len(sys.argv) == 1:
     print("no file arguements passed")
     raise Exception(Fore.RED + "no file arguments passed" + Style.RESET_ALL)
     # sys.exit()
-else: 
+else:
     validation(sys.argv[1])
