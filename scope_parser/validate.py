@@ -12,6 +12,9 @@ import chardet
 
 import scope_parser as sp
 
+from colorama import Fore
+from colorama import Back
+from colorama import Style
 
 # check the input file should be csv file
 def is_csv(filename):
@@ -27,8 +30,9 @@ def is_csv(filename):
         df.to_csv(filename, index=False, encoding='utf-8-sig')
         return True
     except(Exception):
-        print("Input file is not csv or doesn't exist such csv")
-        exit(1)
+         print ("filename; " + filename)
+         print(Fore.RED + 'Input file is invalid. It is not a csv file or it is corrupted.' + Style.RESET_ALL)
+         raise
 
 
 def check_unicode(filename):
@@ -134,15 +138,16 @@ def validation(file):
     """
     # check whether the file has error or not
     error_key = 0
+    print(Fore.BLUE + "checking CSV:" + Style.RESET_ALL)
     # test does it is csv file and convert file into unicode
     is_csv(file)
-    print("It is valid csv file")
+    print("It is a valid csv file")
     # read the file as data frame
     df = pd.read_csv(file)
     # create a new_dataframe for error records
     Error = pd.DataFrame(columns=['Source', 'RSS feed URLs (where available)', 'Type', 'Tags', 'Associated Twitter Handle', 'Associated Publisher', 'Name', 'Text aliases'])  # nopep8
 
-    print("check Type")
+    print(Fore.BLUE + "checking Type:" + Style.RESET_ALL)
     error_type = check_Type(df)
     print("There are %d lines with Type errors" % error_type.index.size)
     if error_type.index.size != 0:
@@ -151,7 +156,7 @@ def validation(file):
         Error = Error.append(type_error_name)
         Error = Error.append(error_type)
 
-    print("check Url")
+    print(Fore.BLUE + "checking URL:" + Style.RESET_ALL)
     error_Url = check_domain(df)
     print("There are %d lines with invaild Url errors" % error_Url.index.size)
     if error_Url.index.size != 0:
@@ -160,7 +165,7 @@ def validation(file):
         Error = Error.append(Url_error_name)
         Error = Error.append(error_Url)
 
-    print("check Associate Twitter Handle")
+    print(Fore.BLUE + "checking Associate Twitter Handle:" + Style.RESET_ALL)
     error_ATH = check_ATH(df)
 
     print("There are %d lines with incorrect Associate Twitter Handle errors" % error_ATH.index.size)  # nopep8
@@ -170,7 +175,7 @@ def validation(file):
         Error = Error.append(ATH_error_name)
         Error = Error.append(error_ATH)
 
-    print("check Twitter Handle")
+    print(Fore.BLUE + "checking Twitter Handles:" + Style.RESET_ALL)
     error_TH = check_Source(df)
     print("There are %d lines with incorrect Twitter Handle errors" % error_TH.index.size)  # nopep8
     if error_TH.index.size != 0:
@@ -181,13 +186,13 @@ def validation(file):
 
     # if it has error, generate error.csv
     if error_key == 1:
-        print("csv exists some errors, please fix it")
-        print("generate error.csv")
+        # print(Fore.RED + "There exists some csv formating errors, please fix" + Style.RESET_ALL)
+        print(Fore.RED + "Generating error.csv..." + Style.RESET_ALL)
         Error.to_csv('error.csv', index=True, encoding='utf-8-sig')
-        return None
+        raise Exception(Fore.RED + "There exists some csv formating errors, please refer to the error file to fix" + Style.RESET_ALL)
     else:
         sp.scope_parser(file)
-        print("Valid")
+        print(Fore.GREEN + "Finished Validating and Scope Parsing." + Style.RESET_ALL)
 
 
 if __name__ == '__main__':

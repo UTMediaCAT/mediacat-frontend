@@ -121,4 +121,4 @@ def scope_parser(file):
 
 if __name__ == '__main__':
     inFile = sys.argv[1]
-    dataframes = scope_parser("test_demo.csv")
+    dataframes = scope_parser(inFile)
