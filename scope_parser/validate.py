@@ -1,19 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
 
 import pandas as pd
 import numpy as np
 import urllib.request
 import sys
 import chardet
-
+import validators
 import scope_parser as sp
-
-from colorama import Fore
-from colorama import Style
 
 
 # check the input file should be csv file
@@ -30,12 +25,8 @@ def is_csv(filename):
         df.to_csv(filename, index=False, encoding='utf-8-sig')
         return True
     except(Exception):
-        print("filename; " + filename)
-        print(Fore.RED +
-              'Input file is invalid.' +
-              ' It is not a csv file or it is corrupted.' +
-              Style.RESET_ALL)
-        raise
+        print("Input file is not csv or doesn't exist such csv")
+        exit(1)
 
 
 def check_unicode(filename):
@@ -55,17 +46,13 @@ def url_is_alive(url):
     :param url: A URL
     :rtype: bool
     """
-    request = urllib.request.Request(url)
-    request.get_method = lambda: 'HEAD'
-
-    try:
-        urllib.request.urlopen(request)
+    if validators.url(url) == True:  # nopep8
         return True
-    except(Exception):
+    else:
         return False
 
 
-def check_domain(df):  # silence pyflakes
+def check_domain(df):
     """
     Checks that a given df's url is reachable and return invalid dataframe.
     :param df: A dataframe
@@ -102,7 +89,7 @@ def check_Type(df):  # silence pyflakes
 
 
 # find the source is incorrect format and return index
-def check_Source(df):  # silence pyflakes
+def check_Source(df):
     """
     Checks that all source(Twitter Handle part) is valid or not
     and return invalid rows as a new dataframe.
@@ -141,16 +128,15 @@ def validation(file):
     """
     # check whether the file has error or not
     error_key = 0
-    print(Fore.BLUE + "checking CSV:" + Style.RESET_ALL)
     # test does it is csv file and convert file into unicode
     is_csv(file)
-    print("It is a valid csv file")
+    print("It is valid csv file")
     # read the file as data frame
     df = pd.read_csv(file)
     # create a new_dataframe for error records
     Error = pd.DataFrame(columns=['Source', 'RSS feed URLs (where available)', 'Type', 'Tags', 'Associated Twitter Handle', 'Associated Publisher', 'Name', 'Text aliases'])  # nopep8
 
-    print(Fore.BLUE + "checking Type:" + Style.RESET_ALL)
+    print("check Type")
     error_type = check_Type(df)
     print("There are %d lines with Type errors" % error_type.index.size)
     if error_type.index.size != 0:
@@ -159,7 +145,7 @@ def validation(file):
         Error = Error.append(type_error_name)
         Error = Error.append(error_type)
 
-    print(Fore.BLUE + "checking URL:" + Style.RESET_ALL)
+    print("check Url")
     error_Url = check_domain(df)
     print("There are %d lines with invaild Url errors" % error_Url.index.size)
     if error_Url.index.size != 0:
@@ -168,7 +154,7 @@ def validation(file):
         Error = Error.append(Url_error_name)
         Error = Error.append(error_Url)
 
-    print(Fore.BLUE + "checking Associate Twitter Handle:" + Style.RESET_ALL)
+    print("check Associate Twitter Handle")
     error_ATH = check_ATH(df)
 
     print("There are %d lines with incorrect Associate Twitter Handle errors" % error_ATH.index.size)  # nopep8
@@ -178,7 +164,7 @@ def validation(file):
         Error = Error.append(ATH_error_name)
         Error = Error.append(error_ATH)
 
-    print(Fore.BLUE + "checking Twitter Handles:" + Style.RESET_ALL)
+    print("check Twitter Handle")
     error_TH = check_Source(df)
     print("There are %d lines with incorrect Twitter Handle errors" % error_TH.index.size)  # nopep8
     if error_TH.index.size != 0:
@@ -189,18 +175,15 @@ def validation(file):
 
     # if it has error, generate error.csv
     if error_key == 1:
-        print(Fore.RED + "Generating error.csv..." + Style.RESET_ALL)
+        print("csv exists some errors, please fix it")
+        print("generate error.csv")
         Error.to_csv('error.csv', index=True, encoding='utf-8-sig')
-        raise Exception(Fore.RED +
-              "There exists some csv formating errors," +
-                        "please refer to the error file to fix" +
-                        Style.RESET_ALL)
+        return None
     else:
         sp.scope_parser(file)
-        print(Fore.GREEN +
-              "Finished Validating and Scope Parsing." + Style.RESET_ALL)
+        print("Valid")
 
 
 if __name__ == '__main__':
-    inFile = sys.argv[1]
-    validation(inFile)
+    # inFile = sys.argv[1]
+    validation("input_scope_final.csv")
