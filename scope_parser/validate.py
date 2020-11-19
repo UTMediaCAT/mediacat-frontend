@@ -8,14 +8,42 @@ import pandas as pd
 import numpy as np
 import urllib.request
 import sys
-import traceback 
-
 import chardet
-
+import validators
 import scope_parser as sp
-
+import requests
 from colorama import Fore
 from colorama import Style
+
+
+# In[2]:
+
+
+def url_is_alive(url):
+    """
+    Checks that a given URL is reachable.
+    :param url: A URL
+    :rtype: bool
+    """
+    hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',  # nopep8
+       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',  # nopep8
+       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+       'Accept-Encoding': 'none',
+       'Accept-Language': 'en-US,en;q=0.8',
+       'Connection': 'keep-alive'}
+    print(url)
+
+    try:
+        request = urllib.request.Request(url, headers=hdr)
+        response = urllib.request.urlopen(request, timeout=30)
+        if str(response.status)[0] == "2":
+            print("True")
+            return True
+        else:
+            return False
+    except(Exception):
+
+        return False
 
 
 # check the input file should be csv file
@@ -41,6 +69,9 @@ def is_csv(filename):
         raise
 
 
+# In[4]:
+
+
 def check_unicode(filename):
     """
     check the csv file is unicode or not
@@ -53,27 +84,22 @@ def check_unicode(filename):
         sys.stdout.flush()
 
 
-def url_is_alive(url):
+# In[5]:
+
+
+def url_format(url):
     """
     Checks that a given URL is reachable.
     :param url: A URL
     :rtype: bool
     """
-    print('Currently checking url: ' + url)
-    sys.stdout.flush()
-
-    try:
-        request = urllib.request.Request(url)
-        request.get_method = lambda: 'HEAD'
-        urllib.request.urlopen(request, timeout=300)
+    if validators.url(url) == True:  # nopep8
         return True
-    except(Exception):
-        print(traceback.print_exc())
-        sys.stdout.flush()
+    else:
         return False
 
 
-def check_domain(df):  # silence pyflakes
+def check_domain(df):
     """
     Checks that a given df's url is reachable and return invalid dataframe.
     :param df: A dataframe
@@ -88,6 +114,9 @@ def check_domain(df):  # silence pyflakes
     return domain
 
 
+# In[7]:
+
+
 def check_ATH(df):
     """
     Checks that all Associated Twitter Handle is valid or not
@@ -96,6 +125,9 @@ def check_ATH(df):
     :rtype: a dataframe
     """
     return(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))])   # nopep8
+
+
+# In[8]:
 
 
 def check_Type(df):  # silence pyflakes
@@ -109,8 +141,11 @@ def check_Type(df):  # silence pyflakes
     return(new)
 
 
+# In[9]:
+
+
 # find the source is incorrect format and return index
-def check_Source(df):  # silence pyflakes
+def check_Source(df):
     """
     Checks that all source(Twitter Handle part) is valid or not
     and return invalid rows as a new dataframe.
@@ -119,6 +154,9 @@ def check_Source(df):  # silence pyflakes
     """
     new = df.loc[df["Type"] == "Twitter Handle"]
     return(new.loc[~(df["Source"].str.startswith('@'))])
+
+
+# In[10]:
 
 
 def insert_error_type(error_name):
@@ -149,6 +187,7 @@ def validation(file):
     """
     # check whether the file has error or not
     error_key = 0
+    url_error_key = 0
     print(Fore.BLUE + "checking CSV:" + Style.RESET_ALL)
     sys.stdout.flush()
     # test does it is csv file and convert file into unicode
@@ -177,7 +216,7 @@ def validation(file):
     print("There are %d lines with invaild Url errors" % error_Url.index.size)
     sys.stdout.flush()
     if error_Url.index.size != 0:
-        error_key = 1
+        url_error_key = 1
         Url_error_name = insert_error_type("URL error")
         Error = Error.append(Url_error_name)
         Error = Error.append(error_Url)
@@ -210,17 +249,22 @@ def validation(file):
         print(Fore.RED + "Generating error.csv..." + Style.RESET_ALL)
         sys.stdout.flush()
         Error.to_csv('error.csv', index=True, encoding='utf-8-sig')
-        raise Exception(Fore.RED +
-              "There exists some csv formating errors," +
-                        "please refer to the error file to fix" +
-                        Style.RESET_ALL)
+        raise Exception(Fore.RED + "There exists some csv formating errors," +
+                        "please refer to the error file to fix" + Style.RESET_ALL)  # nopep8
     else:
+        if url_error_key == 1:
+            print(Fore.RED + "Generating error.csv...only url error" + Style.RESET_ALL)  # nopep8
+            sys.stdout.flush()
+            Error.to_csv('error.csv', index=True, encoding='utf-8-sig')
         sp.scope_parser(file)
         print(Fore.GREEN +
               "Finished Validating and Scope Parsing." + Style.RESET_ALL)
         sys.stdout.flush()
 
 
+# In[12]:
+
+
 if __name__ == '__main__':
-    inFile = sys.argv[1]
-    validation(inFile)
+    # inFile = sys.argv[1]
+    validation("input_scope_final.csv")
