@@ -11,7 +11,6 @@ import sys
 import chardet
 import validators
 import scope_parser as sp
-import requests
 from colorama import Fore
 from colorama import Style
 
