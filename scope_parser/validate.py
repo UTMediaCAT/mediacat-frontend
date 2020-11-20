@@ -31,12 +31,14 @@ def url_is_alive(url):
        'Accept-Language': 'en-US,en;q=0.8',
        'Connection': 'keep-alive'}
     print(url)
+    sys.stdout.flush()
 
     try:
         request = urllib.request.Request(url, headers=hdr)
         response = urllib.request.urlopen(request, timeout=30)
         if str(response.status)[0] == "2":
             print("True")
+            sys.stdout.flush()
             return True
         else:
             return False
