@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 import pandas as pd
 import numpy as np
 import urllib.request
@@ -15,9 +12,6 @@ from colorama import Fore
 from colorama import Style
 
 
-# In[2]:
-
-
 def url_is_alive(url):
     """
     Checks that a given URL is reachable.
@@ -25,11 +19,11 @@ def url_is_alive(url):
     :rtype: bool
     """
     hdr = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11',  # nopep8
-       'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',  # nopep8
-       'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
-       'Accept-Encoding': 'none',
-       'Accept-Language': 'en-US,en;q=0.8',
-       'Connection': 'keep-alive'}
+           'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',  # nopep8
+           'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
+           'Accept-Encoding': 'none',
+           'Accept-Language': 'en-US,en;q=0.8',
+           'Connection': 'keep-alive'}
     print(url)
     sys.stdout.flush()
 
@@ -70,7 +64,7 @@ def is_csv(filename):
         raise
 
 
-# In[4]:
+# In[18]:
 
 
 def check_unicode(filename):
@@ -85,7 +79,7 @@ def check_unicode(filename):
         sys.stdout.flush()
 
 
-# In[5]:
+# In[19]:
 
 
 def url_format(url):
@@ -98,6 +92,18 @@ def url_format(url):
         return True
     else:
         return False
+
+
+def check_url_format(df):
+    domain = df.loc[df["Type"] == "News Source"].copy(deep=True)
+    result = domain["Source"].apply(url_format)
+    domain.loc[:, 'domain_valid'] = result
+    domain = domain.loc[domain["domain_valid"] == False]  # nopep8
+    del domain['domain_valid']
+    return domain
+
+
+# In[21]:
 
 
 def check_domain(df):
@@ -115,7 +121,7 @@ def check_domain(df):
     return domain
 
 
-# In[7]:
+# In[22]:
 
 
 def check_ATH(df):
@@ -128,7 +134,7 @@ def check_ATH(df):
     return(df.loc[~(df["Associated Twitter Handle"].isnull() | df["Associated Twitter Handle"].str.startswith('@'))])   # nopep8
 
 
-# In[8]:
+# In[23]:
 
 
 def check_Type(df):  # silence pyflakes
@@ -142,7 +148,7 @@ def check_Type(df):  # silence pyflakes
     return(new)
 
 
-# In[9]:
+# In[24]:
 
 
 # find the source is incorrect format and return index
@@ -157,7 +163,7 @@ def check_Source(df):
     return(new.loc[~(df["Source"].str.startswith('@'))])
 
 
-# In[10]:
+# In[25]:
 
 
 def insert_error_type(error_name):
@@ -198,6 +204,12 @@ def validation(file):
     # read the file as data frame
     df = pd.read_csv(file)
     # create a new_dataframe for error records
+    url_format_error = check_url_format(df)
+    if url_format_error.index.size != 0:
+        print("please fix the url formats")
+        url_format_error.to_csv('url_format.csv', index=True, encoding='utf-8-sig')  # nopep8
+        return None
+
     Error = pd.DataFrame(columns=['Source', 'RSS feed URLs (where available)', 'Type', 'Tags', 'Associated Twitter Handle', 'Associated Publisher', 'Name', 'Text aliases'])  # nopep8
 
     print(Fore.BLUE + "checking Type:" + Style.RESET_ALL)
@@ -261,9 +273,6 @@ def validation(file):
         print(Fore.GREEN +
               "Finished Validating and Scope Parsing." + Style.RESET_ALL)
         sys.stdout.flush()
-
-
-# In[12]:
 
 
 if __name__ == '__main__':
