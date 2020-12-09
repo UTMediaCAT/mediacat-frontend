@@ -13,4 +13,7 @@ if len(sys.argv) == 1:
     raise Exception(Fore.RED + "no file arguments passed" + Style.RESET_ALL)
     # sys.exit()
 else:
-    validation(sys.argv[1])
+    try:
+        validation(sys.argv[1])
+    except Exception:
+        raise
