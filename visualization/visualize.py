@@ -39,7 +39,7 @@ with open("output.json", "r") as output:
             elif prefix == entry_id+"."+curr_col+".item":
                 multi_columns[-1]+=value+" "
             # Marks the end of the element
-            elif prefix == entry_id and event == "end_map":
+            elif entry_id != "" and prefix == entry_id and event == "end_map":
                 if not column_set:
                     file.write(columns+"\n")
                     print("Column "+columns)
