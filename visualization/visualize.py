@@ -1,6 +1,4 @@
 import ijson
-import time
-import csv
 with open("output.json", "r") as output:
     parser = ijson.parse(output)
     current = ""
@@ -50,4 +48,4 @@ with open("output.json", "r") as output:
                 curr_col = ""
                 multi_columns = []
                 entry_id = ""
-        #print('prefix={}, event={}, value={}'.format(prefix, event, value))
+        # print('prefix={}, event={}, value={}'.format(prefix, event, value))
