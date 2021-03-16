@@ -1,6 +1,6 @@
-﻿# script calls on validation script which then runs the scope parser
+# script calls on scope_parser without validation script
 
-from validate import validation
+from scope_parser import scope_parser
 import sys
 
 from colorama import Fore
@@ -16,6 +16,6 @@ if len(sys.argv) == 1:
     # sys.exit()
 else:
     try:
-        validation(sys.argv[1]) # pass into the validation function
+        scope_parser(sys.argv[1]) # script calls scope parser directly
     except Exception:
         raise
