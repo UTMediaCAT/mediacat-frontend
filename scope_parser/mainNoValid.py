@@ -6,7 +6,7 @@ import sys
 from colorama import Fore
 from colorama import Style
 
-# call validator
+# call scope parser instead of validator
 # stop everything (crawls), raise an error
 # ask the user to try again
 
@@ -16,6 +16,6 @@ if len(sys.argv) == 1:
     # sys.exit()
 else:
     try:
-        scope_parser(sys.argv[1]) # script calls scope parser directly
+        scope_parser(sys.argv[1])  # script calls scope parser directly
     except Exception:
         raise
