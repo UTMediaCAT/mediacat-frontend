@@ -4,3 +4,12 @@
 Visualization: Work has been done on the aspect of helping the team visualize date in the #7-visualizations branch
 
 Scope Parser: preliminary checks on the scope data before feeding it into the domain crawler 
+
+# scope_parser (/scope_parser/ folder)
+
+do `python3 main.py scope.csv` to validate and check the full scope for any obvious errors. If successful, it outputs the list of domains in the correct format for the crawler (domain.csv) and links that gave errors (error.csv). It takes in the input of the full scope that was manually provided.
+
+
+ or `python3 main.py scope.csv` for validation + scope parser reformating
+
+or `python3 mainNoValid.py scope.csv` skips validation then reformats the scope
