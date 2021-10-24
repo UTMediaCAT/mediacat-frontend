@@ -19,6 +19,7 @@ Scope Parser: preliminary checks on the scope data before feeding it into the do
     -   x-axis: years, y-axis: number of citations
 -   post-processor-to csv
     -   converts the output from the post-processor (json file) to a csv format
+    -   see the README in post-processor-to csv for more details
 
 ## scope_parser (/scope_parser/ folder)
 
