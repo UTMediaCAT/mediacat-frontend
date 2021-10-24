@@ -1,0 +1,547 @@
+{
+    "e7e87778-ba90-5bcd-9de5-c2e1281e9486": {
+        "id": "e7e87778-ba90-5bcd-9de5-c2e1281e9486",
+        "url or alias text": "https://www.cnn.com",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "CNN",
+        "tags": [
+            "left-center",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "CNN",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "0634a0d0-4582-552d-8ae5-8217cb341ff8": {
+        "id": "0634a0d0-4582-552d-8ae5-8217cb341ff8",
+        "url or alias text": "https://www.dailymail.co.uk",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "Daily Mail",
+        "tags": [
+            "right",
+            "Referring",
+            "International",
+            "Europe"
+        ],
+        "name/title": "Daily Mail",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "c8269cb2-2000-5e1d-b614-5d552cb0bab1": {
+        "id": "c8269cb2-2000-5e1d-b614-5d552cb0bab1",
+        "url or alias text": "https://nypost.com",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "New York Post",
+        "tags": [
+            "right",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "New York Post",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "2e1bb938-0631-586a-8d35-cbdc6bc76c82": {
+        "id": "2e1bb938-0631-586a-8d35-cbdc6bc76c82",
+        "url or alias text": "http://www.nytimes.com",
+        "referring record id": [
+            "c8976060-d4c6-5741-a6ca-d8440478f413_1625771223487",
+            "8b68a7ae-070f-5fe6-a109-1cc48f4f85cb_1625771223647"
+        ],
+        "number of referrals": 2,
+        "type": "domain",
+        "associated publisher": "New York Times",
+        "tags": [
+            "left-center",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "New York Times",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "10ef8870-5105-59f0-960b-aca25b9380f8": {
+        "id": "10ef8870-5105-59f0-960b-aca25b9380f8",
+        "url or alias text": "https://www.reuters.com",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "Reuters",
+        "tags": [
+            "center",
+            "Referring",
+            "Wire",
+            "Europe"
+        ],
+        "name/title": "Reuters",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "6303c567-b9a1-53df-94ce-d3ea99ae2b31": {
+        "id": "6303c567-b9a1-53df-94ce-d3ea99ae2b31",
+        "url or alias text": "https://thehill.com",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "The Hill",
+        "tags": [
+            "center",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "The Hill",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "4e253c71-cb16-5bff-9921-63888b6ed6e2": {
+        "id": "4e253c71-cb16-5bff-9921-63888b6ed6e2",
+        "url or alias text": "https://theintercept.com",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "The Intercept",
+        "tags": [
+            "left",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "The Intercept",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "e23a2832-d0ea-58bb-bf7b-4c83f1dfabfd": {
+        "id": "e23a2832-d0ea-58bb-bf7b-4c83f1dfabfd",
+        "url or alias text": "https://www.washingtonpost.com",
+        "referring record id": [
+            "52e92f7f-963d-528d-ae7d-958a7e5e1c95_1626013449884",
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 2,
+        "type": "domain",
+        "associated publisher": "The Washington Post",
+        "tags": [
+            "left-center",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "The Washington Post",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "86f179f3-bc6c-52da-a096-e9a5dfe0d4af": {
+        "id": "86f179f3-bc6c-52da-a096-e9a5dfe0d4af",
+        "url or alias text": "https://www.usatoday.com",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "USA Today",
+        "tags": [
+            "center",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "USA Today",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "152f6c49-fe3e-5897-8560-ac98d667314f": {
+        "id": "152f6c49-fe3e-5897-8560-ac98d667314f",
+        "url or alias text": "https://www.wsj.com",
+        "referring record id": [
+            "0dcc12bd-e822-5f0d-ad4a-ec3c0f364cee_1625777472590"
+        ],
+        "number of referrals": 1,
+        "type": "domain",
+        "associated publisher": "Wall Street Journal",
+        "tags": [
+            "right-center",
+            "Referring",
+            "International",
+            "NAmerica"
+        ],
+        "name/title": "Wall Street Journal",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "32e127d2-9651-57bd-8477-61faadda20e5": {
+        "id": "32e127d2-9651-57bd-8477-61faadda20e5",
+        "url or alias text": "['Jerusalem Post', 'Jpost']",
+        "referring record id": [
+            "df2fa1ff-5345-513a-8c83-8dd644ed54ed_1625705945076",
+            "164b70ec-e21c-50de-83b1-f68c96609edf_1625930760033",
+            "a8932cad-a204-5ed3-b312-0af0273bf228_1626005941558",
+            "1a2cf74f-35d0-583b-b98f-1f0429e99789_1625754375008",
+            "b149aefb-4fee-5539-b43e-bc2ee9bb3aa4_1625720268740",
+            "34621962-37dc-5b9d-a187-1ecbe0de1ac7_1626001248452",
+            "38323b36-c8b0-574e-8fe8-a61911ea6233_1625723155663",
+            "465ae140-ee94-5f6f-9041-2ae6d92eb75e_1625782634726",
+            "7e3a6f81-90ba-5647-a657-a791a4bbc8b0_1625704821794",
+            "6b286a48-66c6-5234-bbf9-25d9810f5610_1625930705750",
+            "d390a3d7-db5a-5108-b835-96a4ce4cb550_1625708496576",
+            "52ff5998-fe3b-5f48-9501-e08f50bc78b5_1625982264826",
+            "78858b59-88a4-5f7e-9208-577a46450e44_1625783067365",
+            "34e9b1cf-540a-5806-b7b8-60da3d05baf2_1625960502722",
+            "cbf7faf1-dffb-57d7-ba85-3ee769d03980_1626017701477",
+            "7b4ccd74-80b9-5f54-83ba-4193da0db150_1626016993232",
+            "492a4369-513e-59fe-8eb1-f83b70b341f1_1626022947951"
+        ],
+        "number of referrals": 17,
+        "type": "text aliases",
+        "associated publisher": "Jerusalem Post",
+        "tags": [
+            "Israeli",
+            "English",
+            "Current-Affairs",
+            "right-center",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Jerusalem Post",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "4041a3fc-5e79-563b-985f-952ae0257f9d": {
+        "id": "4041a3fc-5e79-563b-985f-952ae0257f9d",
+        "url or alias text": "['Maariv', \"Ma'ariv\", 'NRG']",
+        "referring record id": [
+            "7f5898a9-3184-5719-ae58-e47b32fda05f_1625780077511",
+            "705efcca-d85d-554a-b099-2e9ca6034d96_1625780117302",
+            "34ef7ed6-92e5-5817-8d87-f32a2c553e59_1625940513962",
+            "dbff32ae-9620-5b3f-a294-23da6eacc043_1626001711857",
+            "ab4b0daa-c593-588a-bacc-1be538ac626d_1626000011680",
+            "0d8655a5-51e7-5f68-a668-36ae0d1384e2_1625782886223",
+            "ef069e68-1fdd-5007-944b-4b9acf43cb0c_1626016969176",
+            "412d9527-e396-5899-8f32-0e685d830351_1625780118184",
+            "91e91561-5b6c-5109-89e9-a1bc194eb6ff_1625751288848",
+            "6664594e-2049-5206-8930-b37d839588cc_1625934404931"
+        ],
+        "number of referrals": 10,
+        "type": "text aliases",
+        "associated publisher": "Jerusalem Post",
+        "tags": [
+            "Israeli",
+            "Hebrew",
+            "Current-Affairs",
+            "right-center",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Maariv",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "65c906a9-67d2-5161-acd8-ac4455743a33": {
+        "id": "65c906a9-67d2-5161-acd8-ac4455743a33",
+        "url or alias text": "['Times of Israel']",
+        "referring record id": [
+            "386d1dcf-7881-582b-b0ae-46bad983ca5f_1625995424662"
+        ],
+        "number of referrals": 1,
+        "type": "text aliases",
+        "associated publisher": "Times of Israel",
+        "tags": [
+            "Israeli",
+            "English",
+            "Current-Affairs",
+            "center",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Times of Israel",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "11a496aa-8d87-5c2b-bc8c-66e54b6de7e3": {
+        "id": "11a496aa-8d87-5c2b-bc8c-66e54b6de7e3",
+        "url or alias text": "['Ynet', 'Yediot', 'Yedioth', 'ynetnews']",
+        "referring record id": [
+            "70a6d767-b565-5a54-b380-2175c76ed18d_1625982962619",
+            "322c5644-cff7-564a-867c-c4e94388befd_1625782622476",
+            "bd510760-21e0-572b-a9eb-b580f9383152_1626018999625",
+            "7843f29b-5a0c-5985-9bdb-604d4c63baed_1625990168814",
+            "c1e6f146-7481-539e-bd4e-e23a9efc3f71_1625779191431",
+            "692b357e-1bcd-5de4-9382-b8554ec82e86_1625746672951",
+            "a128f0dc-5a91-5787-a66b-dc940d26237d_1626013369712"
+        ],
+        "number of referrals": 7,
+        "type": "text aliases",
+        "associated publisher": "Yediot",
+        "tags": [
+            "Israeli",
+            "English",
+            "Current-Affairs",
+            "center",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Ynet - English",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "e27e7998-66e7-5dc9-99ad-22eb039f1bac": {
+        "id": "e27e7998-66e7-5dc9-99ad-22eb039f1bac",
+        "url or alias text": "['sikha mekomit', 'Local Call', '\u05e9\u05d9\u05d7\u05d4 \u05de\u05e7\u05d5\u05de\u05d9\u05ea']",
+        "referring record id": [
+            "048979cc-f6bb-5426-a850-a47e32204770_1625939650834"
+        ],
+        "number of referrals": 1,
+        "type": "text aliases",
+        "associated publisher": "972Mag",
+        "tags": [
+            "Israeli",
+            "Hebrew",
+            "Current-Affairs",
+            "left",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Sikha Mekomit",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "5e32d1b4-078a-5a83-9319-bd9126401e87": {
+        "id": "5e32d1b4-078a-5a83-9319-bd9126401e87",
+        "url or alias text": "['Israel Hayom', 'IsraelHayom']",
+        "referring record id": [
+            "322c5644-cff7-564a-867c-c4e94388befd_1625782622476",
+            "c1e6f146-7481-539e-bd4e-e23a9efc3f71_1625779191431",
+            "a128f0dc-5a91-5787-a66b-dc940d26237d_1626013369712"
+        ],
+        "number of referrals": 3,
+        "type": "text aliases",
+        "associated publisher": "Israel Hayom",
+        "tags": [
+            "Israeli",
+            "English",
+            "Current-Affairs",
+            "right",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Israel Hayom - English",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "b0c76c56-4e2a-5996-a2d6-5c554a1a17ba": {
+        "id": "b0c76c56-4e2a-5996-a2d6-5c554a1a17ba",
+        "url or alias text": "['Globes']",
+        "referring record id": [
+            "bedb6320-58f4-5f05-89d9-cb6e4ddfe8be_1626042858976",
+            "406a9787-ea22-5683-a26c-123ed018e9ae_1625800401778",
+            "c897eb86-967d-5273-8fbc-6d87536ba78e_1625799952974",
+            "54f253ea-7a33-5c73-a5b5-3347f08f525d_1625941490067",
+            "ab6dfcdc-ebc5-54c7-a946-9b51d2b33f70_1625936936250",
+            "16e8c860-7a1e-597c-8825-232d1bb0978d_1626041897537",
+            "34cd1722-51d2-5ddc-951f-6ad5f08e1da8_1625754515446",
+            "d87baffd-91d0-5581-9ee1-26fab2fd823e_1625706438305",
+            "ce2d2872-93c2-5289-8bee-af7b959a3e33_1626013807519",
+            "f334c367-9e72-585b-91be-5fe64f8e170a_1625929918859",
+            "99bc3684-46c3-54dc-ab6c-1917d1866d03_1625800304833",
+            "c8791967-51b0-5790-b66c-ce25fa5282d2_1626047868635",
+            "cf6fe6a3-ae7b-562c-9068-5dcf1d82ffbc_1625789639716",
+            "a4fa5d1e-3bf2-524f-827f-8a885fd01d4f_1625929918389",
+            "07025438-ccc5-5f6a-a417-12e6e637f2e0_1625928426630",
+            "d9adcc52-0c83-5514-bff3-24573a0d8627_1625724879265",
+            "c8173ab3-6f5b-5a6b-84f9-4fd94a309251_1626042435649",
+            "9211b48c-a717-54de-b843-247b76502a5b_1625780597995",
+            "f48655d6-3932-51d0-8730-8dcd7d53859a_1625935818513",
+            "3346e701-2914-57c0-88cc-2fe97c91b290_1625934050015",
+            "e7d7143f-42fb-5b89-bbaf-c7c44be0608e_1625786524872",
+            "b57949c7-44fd-532a-a664-726bda06a4e3_1625789628551"
+        ],
+        "number of referrals": 22,
+        "type": "text aliases",
+        "associated publisher": "Globes",
+        "tags": [
+            "Israeli",
+            "Hebrew",
+            "Financial",
+            "center",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Globes",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "2497342e-c6da-5f9f-81e7-ac68a0773385": {
+        "id": "2497342e-c6da-5f9f-81e7-ac68a0773385",
+        "url or alias text": "['The Marker', 'TheMarker']",
+        "referring record id": [
+            "c2f96c48-f0cf-5075-a8d2-f715bacd7b14_1625738663891",
+            "9350cc9d-3992-50db-9c9f-da1f1a6fd137_1625991532306",
+            "e2b0e616-5453-515a-98db-ac79498cac88_1625755031673",
+            "c5ed2f1f-0b7c-5537-b069-3af3ea695887_1625709360914",
+            "86f38ca7-2f1c-59d5-bff5-006a2e5bfdac_1625709587664",
+            "d2419ebc-7693-54d8-b522-383f92dca5ca_1625941043053",
+            "dc67dbc6-c0c8-50d8-bead-5cc0041c72c5_1625709279442",
+            "9b89fce0-8d7d-53e2-b92a-489fbd48f340_1625791138798"
+        ],
+        "number of referrals": 8,
+        "type": "text aliases",
+        "associated publisher": "Haaretz",
+        "tags": [
+            "Israeli",
+            "Hebrew",
+            "Financial",
+            "center",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "The Marker",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "e795e443-febc-50d0-a5d9-c0db3957474d": {
+        "id": "e795e443-febc-50d0-a5d9-c0db3957474d",
+        "url or alias text": "['Haaretz', \"Ha'aretz\"]",
+        "referring record id": [
+            "97b33c38-6dcc-55a5-8dc4-863fbf970cf3_1625719544553",
+            "0c9b1d47-ef2a-55fa-920b-366e9cc53efa_1625772332580",
+            "9ff6b93b-ab24-5904-8e6e-b085fea6d82b_1625854472077"
+        ],
+        "number of referrals": 3,
+        "type": "text aliases",
+        "associated publisher": "Haaretz",
+        "tags": [
+            "Israeli",
+            "English",
+            "Current-Affairs",
+            "left-center",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Haaretz - English",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    },
+    "39676ac5-4db8-5ec7-9ce2-371726718288": {
+        "id": "39676ac5-4db8-5ec7-9ce2-371726718288",
+        "url or alias text": "['Wafa', 'Palestinian News and Info Agency']",
+        "referring record id": [
+            "98bc433e-5473-51ac-9b59-874e5f3b3a8e_1625709515719",
+            "ca064a03-d3f8-5bd5-8ec6-ea37f10ab5db_1625949597477"
+        ],
+        "number of referrals": 2,
+        "type": "text aliases",
+        "associated publisher": "Wafa (Palestinian News and Information)",
+        "tags": [
+            "Palestinian",
+            "English",
+            "Current-Affairs",
+            "Source",
+            "MENA"
+        ],
+        "name/title": "Wafa (Palestinian News and Info Agency) - English",
+        "language": "",
+        "authors": "",
+        "date of publication": "",
+        "plain text": "",
+        "image reference": "",
+        "anchor text": ""
+    }
+}
